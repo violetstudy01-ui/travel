@@ -1,0 +1,453 @@
+const images = {
+  goa: 'https://images.pexels.com/photos/4428274/pexels-photo-4428274.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  varkala: 'https://images.pexels.com/photos/6652178/pexels-photo-6652178.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  gokarna: 'https://images.pexels.com/photos/6769121/pexels-photo-6769121.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  havelock: 'https://images.pexels.com/photos/27817216/pexels-photo-27817216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  manali: 'https://images.pexels.com/photos/29494184/pexels-photo-29494184.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  munnar: 'https://images.pexels.com/photos/40387748/pexels-photo-40387748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  ooty: 'https://images.pexels.com/photos/9411142/pexels-photo-9411142.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  darjeeling: 'https://images.pexels.com/photos/103875/pexels-photo-103875.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  jaipur: 'https://images.pexels.com/photos/784885/pexels-photo-784885.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  agra: 'https://images.pexels.com/photos/11948442/pexels-photo-11948442.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  hampi: 'https://images.pexels.com/photos/36998119/pexels-photo-36998119.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  mysuru: 'https://images.pexels.com/photos/34962788/pexels-photo-34962788.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  rishikesh: 'https://images.pexels.com/photos/5827456/pexels-photo-5827456.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  jogFalls: 'https://images.pexels.com/photos/17975049/pexels-photo-17975049.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  varanasi: 'https://images.pexels.com/photos/26825664/pexels-photo-26825664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  manaliLeh: 'https://images.pexels.com/photos/12712838/pexels-photo-12712838.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+};
+
+const attractionImages = {
+  fortAguada: 'https://images.pexels.com/photos/35401276/pexels-photo-35401276.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  bagaBeach: 'https://images.pexels.com/photos/28355680/pexels-photo-28355680.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  dudhsagar: 'https://images.pexels.com/photos/29067614/pexels-photo-29067614.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  varkalaCliff: 'https://images.pexels.com/photos/6652178/pexels-photo-6652178.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  papanasam: 'https://images.pexels.com/photos/27566375/pexels-photo-27566375.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  janardana: 'https://images.pexels.com/photos/38612152/pexels-photo-38612152.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  omBeach: 'https://images.pexels.com/photos/35775961/pexels-photo-35775961.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  kudleBeach: 'https://images.pexels.com/photos/19993279/pexels-photo-19993279.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  mahabaleshwar: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Main_entry_to_the_Mahabaleshwar_Temple_at_Gokaran.jpg',
+  radhanagar: 'https://images.pexels.com/photos/7826585/pexels-photo-7826585.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  elephantBeach: 'https://images.pexels.com/photos/29175703/pexels-photo-29175703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  kalapathar: 'https://images.pexels.com/photos/27817216/pexels-photo-27817216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  solang: 'https://images.pexels.com/photos/6149892/pexels-photo-6149892.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  hadimba: 'https://images.pexels.com/photos/32690108/pexels-photo-32690108.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  oldManali: 'https://images.pexels.com/photos/15119473/pexels-photo-15119473.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  munnarTea: 'https://images.pexels.com/photos/32066842/pexels-photo-32066842.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  topStation: 'https://images.pexels.com/photos/36982207/pexels-photo-36982207.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  mattupetty: 'https://images.pexels.com/photos/26969131/pexels-photo-26969131.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  ootyLake: 'https://images.pexels.com/photos/37748487/pexels-photo-37748487.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  ootyGardens: 'https://images.pexels.com/photos/39599098/pexels-photo-39599098.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  ootyTrain: 'https://images.pexels.com/photos/38204462/pexels-photo-38204462.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  tigerHill: 'https://images.pexels.com/photos/31572403/pexels-photo-31572403.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  batasia: 'https://images.pexels.com/photos/3878609/pexels-photo-3878609.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  happyValley: 'https://images.pexels.com/photos/38897190/pexels-photo-38897190.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  amberFort: 'https://images.pexels.com/photos/19446861/pexels-photo-19446861.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  hawaMahal: 'https://images.pexels.com/photos/40082898/pexels-photo-40082898.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  cityPalace: 'https://images.pexels.com/photos/32261804/pexels-photo-32261804.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  tajMahal: 'https://images.pexels.com/photos/20476702/pexels-photo-20476702.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  agraFort: 'https://images.pexels.com/photos/19195952/pexels-photo-19195952.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  fatehpur: 'https://images.pexels.com/photos/19195967/pexels-photo-19195967.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  virupaksha: 'https://images.pexels.com/photos/37609558/pexels-photo-37609558.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  stoneChariot: 'https://images.pexels.com/photos/39525695/pexels-photo-39525695.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  matanga: 'https://images.pexels.com/photos/37626177/pexels-photo-37626177.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  mysorePalace: 'https://images.pexels.com/photos/14702568/pexels-photo-14702568.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  chamundi: 'https://images.pexels.com/photos/39543749/pexels-photo-39543749.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  devaraja: 'https://images.pexels.com/photos/12130840/pexels-photo-12130840.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  laxmanJhula: 'https://images.pexels.com/photos/5827456/pexels-photo-5827456.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  triveniGhat: 'https://images.pexels.com/photos/17869831/pexels-photo-17869831.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  beetlesAshram: 'https://images.pexels.com/photos/8168415/pexels-photo-8168415.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  jogFallsMain: 'https://images.pexels.com/photos/25410129/pexels-photo-25410129.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  jogViewpoint: 'https://images.pexels.com/photos/33356439/pexels-photo-33356439.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  linganamakki: 'https://images.pexels.com/photos/10045872/pexels-photo-10045872.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  dashaswamedh: 'https://images.pexels.com/photos/26825664/pexels-photo-26825664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  kashiVishwanath: 'https://images.pexels.com/photos/18331986/pexels-photo-18331986.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  sarnath: 'https://images.pexels.com/photos/2406731/pexels-photo-2406731.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  manaliLehRoad: 'https://images.pexels.com/photos/12712838/pexels-photo-12712838.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  rohtangPass: 'https://images.pexels.com/photos/12716398/pexels-photo-12716398.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  pangongLake: 'https://images.pexels.com/photos/12712835/pexels-photo-12712835.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+};
+
+const attraction = (id, name, image, description, mapQuery) => ({ id, name, image, description, mapQuery });
+
+const food = (name, description) => ({ name, description });
+
+export const categories = ['All', 'Beaches', 'Mountains', 'Heritage', 'Rivers', 'Waterfalls', 'Pilgrimage', 'Scenic Rides'];
+
+export const categoryLabels = {
+  All: 'All',
+  Beaches: 'Beaches',
+  Mountains: 'Mountains',
+  Heritage: 'Heritage',
+  Rivers: 'Rivers',
+  Waterfalls: 'Waterfalls',
+  Pilgrimage: 'Pilgrimage',
+  'Scenic Rides': 'Scenic Rides',
+};
+
+const vibeMap = {
+  goa: ['fun', 'peaceful'],
+  varkala: ['peaceful', 'romantic'],
+  gokarna: ['peaceful', 'spiritual'],
+  'havelock-island': ['peaceful', 'romantic'],
+  manali: ['adventurous', 'fun'],
+  munnar: ['peaceful', 'romantic'],
+  ooty: ['peaceful', 'romantic'],
+  darjeeling: ['peaceful', 'history'],
+  jaipur: ['history', 'fun'],
+  agra: ['history', 'romantic'],
+  hampi: ['history', 'adventurous'],
+  mysuru: ['history', 'peaceful'],
+  rishikesh: ['spiritual', 'adventurous'],
+  'jog-falls': ['peaceful', 'adventurous'],
+  varanasi: ['spiritual', 'history'],
+  'manali-leh-ride': ['adventurous', 'fun'],
+};
+
+const popularityMap = {
+  goa: 'popular',
+  varkala: 'mixed',
+  gokarna: 'quiet',
+  'havelock-island': 'mixed',
+  manali: 'popular',
+  munnar: 'popular',
+  ooty: 'popular',
+  darjeeling: 'popular',
+  jaipur: 'popular',
+  agra: 'popular',
+  hampi: 'mixed',
+  mysuru: 'mixed',
+  rishikesh: 'popular',
+  'jog-falls': 'quiet',
+  varanasi: 'popular',
+  'manali-leh-ride': 'mixed',
+};
+
+const budgetMap = {
+  goa: ['3000-7000', '7000-15000'],
+  varkala: ['3000-7000'],
+  gokarna: ['under-3000', '3000-7000'],
+  'havelock-island': ['7000-15000', '15000-plus'],
+  manali: ['3000-7000', '7000-15000'],
+  munnar: ['3000-7000', '7000-15000'],
+  ooty: ['3000-7000'],
+  darjeeling: ['3000-7000', '7000-15000'],
+  jaipur: ['3000-7000', '7000-15000'],
+  agra: ['under-3000', '3000-7000'],
+  hampi: ['under-3000', '3000-7000'],
+  mysuru: ['3000-7000'],
+  rishikesh: ['3000-7000', '7000-15000'],
+  'jog-falls': ['under-3000', '3000-7000'],
+  varanasi: ['under-3000', '3000-7000'],
+  'manali-leh-ride': ['7000-15000', '15000-plus'],
+};
+
+const durationMap = {
+  goa: ['weekend', '3-5', 'week-plus'],
+  varkala: ['weekend', '3-5'],
+  gokarna: ['weekend'],
+  'havelock-island': ['3-5', 'week-plus'],
+  manali: ['weekend', '3-5', 'week-plus'],
+  munnar: ['weekend', '3-5'],
+  ooty: ['weekend', '3-5'],
+  darjeeling: ['weekend', '3-5'],
+  jaipur: ['weekend', '3-5'],
+  agra: ['one-day', 'weekend'],
+  hampi: ['weekend', '3-5'],
+  mysuru: ['one-day', 'weekend'],
+  rishikesh: ['weekend', '3-5'],
+  'jog-falls': ['one-day', 'weekend'],
+  varanasi: ['weekend', '3-5'],
+  'manali-leh-ride': ['3-5', 'week-plus'],
+};
+
+const activitiesMap = {
+  goa: ['water-activities', 'food', 'photography', 'relaxing'],
+  varkala: ['relaxing', 'food', 'photography'],
+  gokarna: ['relaxing', 'temples', 'trekking'],
+  'havelock-island': ['water-activities', 'relaxing', 'photography'],
+  manali: ['trekking', 'photography', 'food', 'adventure'],
+  munnar: ['photography', 'relaxing', 'sightseeing'],
+  ooty: ['sightseeing', 'relaxing', 'photography'],
+  darjeeling: ['sightseeing', 'photography', 'history', 'food'],
+  jaipur: ['history', 'architecture', 'food', 'photography'],
+  agra: ['history', 'architecture', 'photography'],
+  hampi: ['history', 'architecture', 'trekking', 'photography'],
+  mysuru: ['history', 'architecture', 'food', 'sightseeing'],
+  rishikesh: ['temples', 'adventure', 'trekking', 'water-activities'],
+  'jog-falls': ['photography', 'sightseeing', 'relaxing'],
+  varanasi: ['temples', 'history', 'photography', 'food'],
+  'manali-leh-ride': ['adventure', 'photography', 'sightseeing'],
+};
+
+const travelModeMap = {
+  goa: ['public', 'own-vehicle', 'flexible'],
+  varkala: ['public', 'flexible'],
+  gokarna: ['public', 'own-vehicle', 'flexible'],
+  'havelock-island': ['public', 'flexible'],
+  manali: ['own-vehicle', 'public', 'flexible'],
+  munnar: ['own-vehicle', 'flexible'],
+  ooty: ['public', 'own-vehicle', 'flexible'],
+  darjeeling: ['public', 'own-vehicle', 'flexible'],
+  jaipur: ['public', 'own-vehicle', 'flexible'],
+  agra: ['public', 'own-vehicle', 'flexible'],
+  hampi: ['own-vehicle', 'flexible'],
+  mysuru: ['public', 'own-vehicle', 'flexible'],
+  rishikesh: ['public', 'own-vehicle', 'flexible'],
+  'jog-falls': ['own-vehicle', 'flexible'],
+  varanasi: ['public', 'flexible'],
+  'manali-leh-ride': ['own-vehicle'],
+};
+
+export const destinations = [
+  {
+    id: 'goa', name: 'Goa', location: 'Goa, India', categories: ['Beaches'], primaryCategory: 'Beaches',
+    category: 'Beaches', image: images.goa,
+    description: 'Goa is more than a beach break: it is a meeting point of Arabian Sea sunsets, Portuguese-influenced neighbourhoods, village churches, spice-scented kitchens, and an easygoing local rhythm. North Goa suits travellers looking for lively cafés, water sports, and music, while the quieter south has broad sands and slower mornings. Between swims, visitors can explore Old Goa’s churches, browse Panjim’s colourful streets, or follow a river road into the countryside. The state works well for first-time India travellers because the experience can be as social or as peaceful as you choose. Come for the coastline, but leave room for food, architecture, and the small inland roads that give Goa its character.',
+    bestTimeToVisit: 'November–February', suggestedDuration: '3–4 days',
+    fact: 'Goa was a Portuguese territory for over 450 years, so its churches, cuisine, and even some surnames carry a European influence found nowhere else in India.',
+    localFood: [food('Goan Fish Curry', 'A tangy coconut-and-kokum curry made with fresh catch from the Arabian Sea.'), food('Pork Vindaloo', 'A spicy-sour dish with Portuguese roots, made with vinegar, garlic, and chillies.'), food('Bebinca', 'A traditional layered coconut-milk dessert baked slowly over hours.')],
+    attractions: [
+      attraction('goa-fort', 'Fort Aguada', attractionImages.fortAguada, 'A 17th-century fort with sea views and a lighthouse.', 'Fort Aguada Goa'),
+      attraction('goa-baga', 'Baga Beach', attractionImages.bagaBeach, 'A lively stretch of sand known for sunsets and waterside cafés.', 'Baga Beach Goa'),
+      attraction('goa-falls', 'Dudhsagar Falls', attractionImages.dudhsagar, 'A dramatic waterfall surrounded by the Western Ghats.', 'Dudhsagar Falls Goa'),
+    ],
+    vibes: vibeMap.goa, popularity: popularityMap.goa, budget: budgetMap.goa, duration: durationMap.goa, activities: activitiesMap.goa, travelMode: travelModeMap.goa,
+  },
+  {
+    id: 'varkala', name: 'Varkala', location: 'Kerala, India', categories: ['Beaches'], primaryCategory: 'Beaches',
+    category: 'Beaches', image: images.varkala,
+    description: 'Varkala is one of Kerala’s most distinctive coastal towns, where a laterite cliff rises above a long, open beach. The clifftop path is lined with small restaurants, shops, and viewpoints, but the atmosphere remains unhurried outside peak hours. Visitors can descend to Papanasam Beach for a swim, watch fishermen work the shore, or visit the Janardana Swamy Temple in the old town. Varkala attracts travellers who want the ease of a seaside stay with more character than a resort strip. It is also a comfortable base for a restorative few days of yoga, sunset walks, and short local excursions. Plan for a gentle pace: the cliff, sea, and evening light are the main itinerary.',
+    bestTimeToVisit: 'October–March', suggestedDuration: '2–3 days',
+    fact: 'Varkala’s laterite cliffs are geologically rare on the Indian coast, making it one of the few places in India where you can walk above the beach on a cliffside promenade.',
+    localFood: [food('Kerala Sadya', 'A vegetarian feast served on a banana leaf with rice and an array of curries.'), food('Karimeen Pollichathu', 'Pearl spot fish marinated in spices and wrapped in banana leaf before steaming.')],
+    attractions: [
+      attraction('varkala-cliff', 'Varkala Cliff', attractionImages.varkalaCliff, 'A dramatic clifftop walkway lined with cafés and ocean views.', 'Varkala Cliff Kerala'),
+      attraction('varkala-papanasam', 'Papanasam Beach', attractionImages.papanasam, 'A broad beach beneath the cliffs with warm evening light.', 'Papanasam Beach Varkala'),
+      attraction('varkala-temple', 'Janardana Swamy Temple', attractionImages.janardana, 'An ancient temple with distinctive Kerala architecture.', 'Janardana Swamy Temple Varkala'),
+    ],
+    vibes: vibeMap.varkala, popularity: popularityMap.varkala, budget: budgetMap.varkala, duration: durationMap.varkala, activities: activitiesMap.varkala, travelMode: travelModeMap.varkala,
+  },
+  {
+    id: 'gokarna', name: 'Gokarna', location: 'Karnataka, India', categories: ['Beaches', 'Pilgrimage'], primaryCategory: 'Beaches',
+    category: 'Beaches', image: images.gokarna,
+    description: 'Gokarna combines the feeling of a pilgrimage town with a relaxed coastal escape. The centre is shaped by temple streets and local markets, while a series of beaches opens out along the rocky coast. Om Beach and Kudle Beach are the easiest places for a sunset walk, whereas quieter coves reward travellers willing to hike or take a short boat ride. Gokarna is a good fit for independent travellers who prefer simple guesthouses, local food, and days without a strict schedule. Its spiritual identity is still part of everyday life, so respectful clothing and behaviour matter around the temples. The destination feels most rewarding when you allow time for the walks between beaches rather than treating each one as a quick stop.',
+    bestTimeToVisit: 'October–March', suggestedDuration: '2–3 days',
+    fact: 'Gokarna is home to the Mahabaleshwar Temple, one of India’s most revered Shiva shrines, giving it spiritual significance alongside its beach-town identity.',
+    localFood: [food('Neer Dosa', 'A thin, lacy rice crepe served with coconut chutney or fish curry.'), food('Gokarna Fish Thali', 'A simple local platter of rice, fish curry, and coastal sides.')],
+    attractions: [
+      attraction('gokarna-om', 'Om Beach', attractionImages.omBeach, 'A peaceful cove shaped like the sacred Om symbol.', 'Om Beach Gokarna'),
+      attraction('gokarna-kudle', 'Kudle Beach', attractionImages.kudleBeach, 'A relaxed crescent of sand popular for sunset walks.', 'Kudle Beach Gokarna'),
+      attraction('gokarna-temple', 'Mahabaleshwar Temple', attractionImages.mahabaleshwar, 'A revered Shiva temple in the heart of the old town.', 'Mahabaleshwar Temple Gokarna'),
+    ],
+    vibes: vibeMap.gokarna, popularity: popularityMap.gokarna, budget: budgetMap.gokarna, duration: durationMap.gokarna, activities: activitiesMap.gokarna, travelMode: travelModeMap.gokarna,
+  },
+  {
+    id: 'havelock-island', name: 'Havelock Island', location: 'Andaman and Nicobar Islands, India', categories: ['Beaches'], primaryCategory: 'Beaches',
+    category: 'Beaches', image: images.havelock,
+    description: 'Havelock Island, officially known as Swaraj Dweep, is an island escape of clear water, thick tropical forest, and long pale beaches. Radhanagar is the headline attraction, but the island is best experienced through a mix of beach time, short forest journeys, and time in the water. Snorkelling and diving reveal coral reefs and marine life, while Elephant Beach is popular for easy day trips. Havelock suits travellers who want a proper pause from cities and do not mind planning around ferries and boat schedules. The landscape feels wild without being inaccessible, and a few extra days make it easier to visit quieter shores. Keep the itinerary spacious; the light, tides, and forest are part of the experience.',
+    bestTimeToVisit: 'November–April', suggestedDuration: '4–5 days',
+    fact: 'Havelock Island was renamed Swaraj Dweep in 2018, part of a wider effort to restore Indian names to Andaman islands.',
+    localFood: [food('Grilled Lobster', 'Fresh-caught lobster, often grilled simply with butter and lime.'), food('Andaman Fish Curry', 'A light coconut-based curry using the day’s catch from surrounding waters.')],
+    attractions: [
+      attraction('havelock-radhanagar', 'Radhanagar Beach', attractionImages.radhanagar, 'A serene beach with deep blue water and soft sand.', 'Radhanagar Beach Havelock'),
+      attraction('havelock-elephant', 'Elephant Beach', attractionImages.elephantBeach, 'A lively snorkelling spot reached through forest or by boat.', 'Elephant Beach Havelock'),
+      attraction('havelock-kalapathar', 'Kalapathar Beach', attractionImages.kalapathar, 'A quieter shoreline framed by dark rocks and forest.', 'Kalapathar Beach Havelock'),
+    ],
+    vibes: vibeMap['havelock-island'], popularity: popularityMap['havelock-island'], budget: budgetMap['havelock-island'], duration: durationMap['havelock-island'], activities: activitiesMap['havelock-island'], travelMode: travelModeMap['havelock-island'],
+  },
+  {
+    id: 'manali', name: 'Manali', location: 'Himachal Pradesh, India', categories: ['Mountains', 'Scenic Rides'], primaryCategory: 'Mountains',
+    category: 'Mountains', image: images.manali,
+    description: 'Manali sits in the Beas River valley beneath the high ranges of Himachal Pradesh, making it a flexible base for both mountain scenery and outdoor days. Pine forests surround the town, while Old Manali brings cafés, small shops, and a more relaxed creative atmosphere. Solang Valley offers broad alpine views and seasonal activities; nearby temples and village roads provide quieter alternatives. Manali suits travellers who want a first taste of the Himalayas without giving up comfortable stays and good food. The town can be busy in holiday seasons, so early starts and stays away from the busiest centre make a noticeable difference. Give yourself time to adjust to the altitude and leave space for weather-led changes.',
+    bestTimeToVisit: 'October–June', suggestedDuration: '3–4 days',
+    fact: 'The name Manali is linked to the Hindu sage Manu, and a temple dedicated to him sits in the old town.',
+    localFood: [food('Siddu', 'A steamed wheat bread stuffed with a sweet or savoury filling, a Himachali staple.'), food('Trout Fish', 'Fresh trout, often pan-fried with herbs, a Manali café favourite.')],
+    attractions: [
+      attraction('manali-solang', 'Solang Valley', attractionImages.solang, 'A broad mountain valley with changing seasonal adventures.', 'Solang Valley Manali'),
+      attraction('manali-hidimba', 'Hadimba Temple', attractionImages.hadimba, 'A cedar-forest temple with striking wooden architecture.', 'Hadimba Temple Manali'),
+      attraction('manali-old', 'Old Manali', attractionImages.oldManali, 'A lively hillside neighbourhood filled with cafés and craft shops.', 'Old Manali Himachal Pradesh'),
+    ],
+    vibes: vibeMap.manali, popularity: popularityMap.manali, budget: budgetMap.manali, duration: durationMap.manali, activities: activitiesMap.manali, travelMode: travelModeMap.manali,
+  },
+  {
+    id: 'munnar', name: 'Munnar', location: 'Kerala, India', categories: ['Mountains'], primaryCategory: 'Mountains',
+    category: 'Mountains', image: images.munnar,
+    description: 'Munnar is a highland landscape of tea plantations, misty ridges, forest reserves, and winding roads in Kerala’s Western Ghats. The layered green hills are the visual signature, but the place becomes more interesting when you look closer: tea workers move through the slopes, small villages appear around bends, and viewpoints change character with the cloud. Munnar is ideal for travellers who enjoy scenic drives, photography, easy walks, and cool evenings rather than a packed attraction checklist. Tea museums and gardens add useful context to the plantation economy, while Mattupetty and Top Station offer classic day outings. Stay at least two nights so the weather has time to open up and reveal the landscape.',
+    bestTimeToVisit: 'September–May', suggestedDuration: '2–3 days',
+    fact: 'Munnar sits at the convergence of three mountain streams — Mudhirapuzha, Nallathanni, and Kundala — which is how the town got its name.',
+    localFood: [food('Appam with Stew', 'Soft, lacy rice pancakes served with a mild coconut-milk vegetable or meat stew.'), food('Kerala Parotta with Beef Fry', 'A flaky flatbread paired with spicy, dry-roasted beef, popular across Central Kerala.')],
+    attractions: [
+      attraction('munnar-tea', 'Tea Gardens', attractionImages.munnarTea, 'Layered plantations covering the hills around Munnar.', 'Tea Gardens Munnar'),
+      attraction('munnar-top', 'Top Station', attractionImages.topStation, 'A high viewpoint with sweeping views across the Western Ghats.', 'Top Station Munnar'),
+      attraction('munnar-mattupetty', 'Mattupetty Dam', attractionImages.mattupetty, 'A peaceful reservoir surrounded by forested mountain slopes.', 'Mattupetty Dam Munnar'),
+    ],
+    vibes: vibeMap.munnar, popularity: popularityMap.munnar, budget: budgetMap.munnar, duration: durationMap.munnar, activities: activitiesMap.munnar, travelMode: travelModeMap.munnar,
+  },
+  {
+    id: 'ooty', name: 'Ooty', location: 'Tamil Nadu, India', categories: ['Mountains'], primaryCategory: 'Mountains',
+    category: 'Mountains', image: images.ooty,
+    description: 'Ooty, or Udhagamandalam, is a classic Nilgiri hill station known for cool weather, eucalyptus-lined roads, gardens, and a heritage railway. Its appeal is gentle rather than dramatic: mornings in the market, slow walks through the botanical gardens, and views that open across green folds of hill country. The Nilgiri Mountain Railway adds a memorable way to arrive or spend a day, especially for travellers who enjoy historic transport and scenic journeys. Ooty works well for families, couples, and anyone looking for a cooler change of pace from the plains. It can feel busy around the lake and centre, so explore beyond the main attractions for quieter tea estates and viewpoints.',
+    bestTimeToVisit: 'October–June', suggestedDuration: '2–3 days',
+    fact: 'The Nilgiri Mountain Railway is a UNESCO World Heritage site, part of the Mountain Railways of India listing.',
+    localFood: [food('Ooty Varkey', 'A crisp, buttery biscuit sold in local bakeries across the Nilgiris.'), food('Homemade Chocolates', 'Small-batch handmade chocolates, a hill-station tradition in Ooty.')],
+    attractions: [
+      attraction('ooty-lake', 'Ooty Lake', attractionImages.ootyLake, 'A calm lake for an easy afternoon beside the hills.', 'Ooty Lake Tamil Nadu'),
+      attraction('ooty-gardens', 'Botanical Gardens', attractionImages.ootyGardens, 'A beautifully kept garden spread across the hillside.', 'Government Botanical Garden Ooty'),
+      attraction('ooty-train', 'Nilgiri Mountain Railway', attractionImages.ootyTrain, 'A memorable heritage rail journey through mountain scenery.', 'Nilgiri Mountain Railway Ooty'),
+    ],
+    vibes: vibeMap.ooty, popularity: popularityMap.ooty, budget: budgetMap.ooty, duration: durationMap.ooty, activities: activitiesMap.ooty, travelMode: travelModeMap.ooty,
+  },
+  {
+    id: 'darjeeling', name: 'Darjeeling', location: 'West Bengal, India', categories: ['Mountains', 'Heritage'], primaryCategory: 'Mountains',
+    category: 'Mountains', image: images.darjeeling,
+    description: 'Darjeeling is an atmospheric hill town where tea estates, colonial-era buildings, Buddhist monasteries, and Himalayan views meet on steep ridges. The town rewards early risers: Tiger Hill can reveal the first light on Kanchenjunga, while the toy train and Batasia Loop show the engineering and landscape that shaped the region. During the day, wander the Mall, visit a tea estate, or follow quieter roads beyond the centre. Darjeeling suits travellers who like culture and character as much as scenery. Mist is part of the experience, not a failure of the trip, and gives the town its distinctive mood. Leave room for slow cafés, local food, and changing views between clear spells.',
+    bestTimeToVisit: 'March–May, October–November', suggestedDuration: '3–4 days',
+    fact: 'Darjeeling’s Himalayan Railway, a UNESCO World Heritage site, was built in the 1880s and remains one of the few steam-hauled hill railways still operating.',
+    localFood: [food('Thukpa', 'A warming noodle soup of Tibetan origin, widely eaten in the hills.'), food('Momos', 'Steamed dumplings with meat or vegetable fillings, a staple of Darjeeling street food.')],
+    attractions: [
+      attraction('darjeeling-tiger', 'Tiger Hill', attractionImages.tigerHill, 'A celebrated sunrise viewpoint over the eastern Himalayas.', 'Tiger Hill Darjeeling'),
+      attraction('darjeeling-batasia', 'Batasia Loop', attractionImages.batasia, 'A landscaped railway loop with panoramic mountain views.', 'Batasia Loop Darjeeling'),
+      attraction('darjeeling-tea', 'Happy Valley Tea Estate', attractionImages.happyValley, 'A historic tea garden close to the town centre.', 'Happy Valley Tea Estate Darjeeling'),
+    ],
+    vibes: vibeMap.darjeeling, popularity: popularityMap.darjeeling, budget: budgetMap.darjeeling, duration: durationMap.darjeeling, activities: activitiesMap.darjeeling, travelMode: travelModeMap.darjeeling,
+  },
+  {
+    id: 'jaipur', name: 'Jaipur', location: 'Rajasthan, India', categories: ['Heritage'], primaryCategory: 'Heritage',
+    category: 'Heritage', image: images.jaipur,
+    description: 'Jaipur, Rajasthan’s Pink City, is a living mix of royal architecture, craft traditions, busy bazaars, and modern cafés. Amber Fort and the City Palace offer the grand scale of the former kingdom, while Hawa Mahal and the old city streets reveal a more intimate rhythm of courtyards, workshops, jewellery, textiles, and food. The city suits travellers who enjoy history but want to experience it alongside everyday life rather than behind museum glass. Mornings are best for major monuments, leaving late afternoon for markets and warm sandstone light. Jaipur can be intense, especially in traffic, so grouping nearby sights and building in pauses makes the city feel much more manageable.',
+    bestTimeToVisit: 'October–March', suggestedDuration: '2–3 days',
+    fact: 'Jaipur was painted pink in 1876 to welcome the Prince of Wales, and the old city has largely kept the tradition alive.',
+    localFood: [food('Dal Baati Churma', 'Baked wheat balls served with lentil curry and a sweet crumbled accompaniment.'), food('Ghevar', 'A disc-shaped sweet made of flour, ghee, and syrup, especially popular during festivals.'), food('Laal Maas', 'A fiery red mutton curry made with Mathania chillies, a Rajput royal classic.')],
+    attractions: [
+      attraction('jaipur-amber', 'Amber Fort', attractionImages.amberFort, 'A hilltop palace complex filled with courtyards and carved details.', 'Amber Fort Jaipur'),
+      attraction('jaipur-hawa', 'Hawa Mahal', attractionImages.hawaMahal, 'An iconic honeycomb facade in the centre of the old city.', 'Hawa Mahal Jaipur'),
+      attraction('jaipur-city', 'City Palace', attractionImages.cityPalace, 'A working royal complex of museums and elegant courtyards.', 'City Palace Jaipur'),
+    ],
+    vibes: vibeMap.jaipur, popularity: popularityMap.jaipur, budget: budgetMap.jaipur, duration: durationMap.jaipur, activities: activitiesMap.jaipur, travelMode: travelModeMap.jaipur,
+  },
+  {
+    id: 'agra', name: 'Agra', location: 'Uttar Pradesh, India', categories: ['Heritage'], primaryCategory: 'Heritage',
+    category: 'Heritage', image: images.agra,
+    description: 'Agra is most famous for the Taj Mahal, but the city’s heritage is broader than one unforgettable monument. Mughal architecture appears in the red sandstone of Agra Fort, the gardens beside the Yamuna, and the planned imperial city of Fatehpur Sikri nearby. The Taj is worth seeing at more than one time of day if your schedule allows: changing light makes the marble feel different, while an early visit is calmer. Agra suits travellers with an interest in architecture, history, and photography, including those making a short stop between Delhi and Rajasthan. Pair the headline sight with a little time in the old city and riverside areas for a more grounded visit.',
+    bestTimeToVisit: 'October–March', suggestedDuration: '1–2 days',
+    fact: 'The Taj Mahal was commissioned by Mughal emperor Shah Jahan as a mausoleum for his wife Mumtaz Mahal in the 17th century.',
+    localFood: [food('Petha', 'A soft, translucent sweet made from ash gourd, said to have originated in Agra.'), food('Mughlai Paratha', 'A rich, stuffed flatbread influenced by Mughal-era kitchens.')],
+    attractions: [
+      attraction('agra-taj', 'Taj Mahal', attractionImages.tajMahal, 'A world-renowned marble monument beside the Yamuna River.', 'Taj Mahal Agra'),
+      attraction('agra-fort', 'Agra Fort', attractionImages.agraFort, 'A massive red sandstone fort with layered imperial history.', 'Agra Fort'),
+      attraction('agra-fatehpur', 'Fatehpur Sikri', attractionImages.fatehpur, 'A striking Mughal city just outside Agra.', 'Fatehpur Sikri'),
+    ],
+    vibes: vibeMap.agra, popularity: popularityMap.agra, budget: budgetMap.agra, duration: durationMap.agra, activities: activitiesMap.agra, travelMode: travelModeMap.agra,
+  },
+  {
+    id: 'hampi', name: 'Hampi', location: 'Karnataka, India', categories: ['Heritage', 'Pilgrimage'], primaryCategory: 'Heritage',
+    category: 'Heritage', image: images.hampi,
+    description: 'Hampi spreads the remains of the Vijayanagara empire across a surreal landscape of granite boulders, palm groves, rice fields, and the Tungabhadra River. Rather than a single historic site, it is a large archaeological region best explored over several days. Virupaksha Temple remains a living centre, while the Vittala complex, royal enclosures, and hilltop viewpoints show the scale and sophistication of the former capital. Hampi suits curious walkers, cyclists, photographers, and travellers who enjoy discovering places at their own pace. Distances can be deceptive and the afternoon heat is strong, so start early, carry water, and plan a restful middle of the day before returning for sunset.',
+    bestTimeToVisit: 'October–February', suggestedDuration: '2–3 days',
+    fact: 'Hampi is a UNESCO World Heritage site, spread across the ruins of Vijayanagara, one of the largest and wealthiest Hindu kingdoms of its time.',
+    localFood: [food('Bisi Bele Bath', 'A hot rice-and-lentil dish with vegetables and tamarind, a Karnataka classic.'), food('Hampi Thali', 'A simple South Indian platter served at local guesthouse eateries.')],
+    attractions: [
+      attraction('hampi-virupaksha', 'Virupaksha Temple', attractionImages.virupaksha, 'A living temple rising above the historic bazaar street.', 'Virupaksha Temple Hampi'),
+      attraction('hampi-stone', 'Stone Chariot', attractionImages.stoneChariot, 'An intricately carved monument within the Vittala Temple complex.', 'Stone Chariot Hampi'),
+      attraction('hampi-mat', 'Matanga Hill', attractionImages.matanga, 'A rewarding viewpoint over Hampi’s boulder-filled valleys.', 'Matanga Hill Hampi'),
+    ],
+    vibes: vibeMap.hampi, popularity: popularityMap.hampi, budget: budgetMap.hampi, duration: durationMap.hampi, activities: activitiesMap.hampi, travelMode: travelModeMap.hampi,
+  },
+  {
+    id: 'mysuru', name: 'Mysuru', location: 'Karnataka, India', categories: ['Heritage', 'Pilgrimage'], primaryCategory: 'Heritage',
+    category: 'Heritage', image: images.mysuru,
+    description: 'Mysuru has a graceful, approachable character built around its royal history, ornate palace, fragrant markets, and strong food and craft traditions. The city is large enough to explore but calmer than many major heritage destinations, making it comfortable for a short cultural break. Mysore Palace is the essential first stop, while Chamundi Hill gives the wider setting and Devaraja Market brings you back to everyday city life. Mysuru suits travellers who like architecture, local rituals, and food-led wandering without the intensity of a packed itinerary. If possible, spend an evening around the palace area when it is illuminated, then keep the next morning for markets, museums, and a slower look at the city’s details.',
+    bestTimeToVisit: 'October–February', suggestedDuration: '2 days',
+    fact: 'Mysore Palace is illuminated by nearly 100,000 bulbs on Sundays and during festivals, making the evening view a signature Mysuru experience.',
+    localFood: [food('Mysore Masala Dosa', 'A crisp rice-and-lentil dosa spread with a spicy red chutney, filled with potato.'), food('Mysore Pak', 'A dense, crumbly sweet made of gram flour, ghee, and sugar, originating from the royal kitchen.')],
+    attractions: [
+      attraction('mysuru-palace', 'Mysore Palace', attractionImages.mysorePalace, 'An illuminated royal landmark with Indo-Saracenic details.', 'Mysore Palace'),
+      attraction('mysuru-chamundi', 'Chamundi Hill', attractionImages.chamundi, 'A hilltop temple with wide views over the city.', 'Chamundi Hill Mysuru'),
+      attraction('mysuru-market', 'Devaraja Market', attractionImages.devaraja, 'A vibrant market filled with flowers, spices, and local colour.', 'Devaraja Market Mysuru'),
+    ],
+    vibes: vibeMap.mysuru, popularity: popularityMap.mysuru, budget: budgetMap.mysuru, duration: durationMap.mysuru, activities: activitiesMap.mysuru, travelMode: travelModeMap.mysuru,
+  },
+  {
+    id: 'rishikesh', name: 'Rishikesh', location: 'Uttarakhand, India', categories: ['Rivers', 'Pilgrimage'], primaryCategory: 'Rivers',
+    category: 'Rivers', image: images.rishikesh,
+    description: 'Rishikesh sits in the foothills of the Himalayas along the Ganges, where forested slopes, riverbanks, and centuries of spiritual practice shape the town. Known as the Yoga Capital of the World, it draws travellers for yoga retreats, meditation, and the evening Ganga Aarti at Triveni Ghat. The same river supports white-water rafting, with popular runs from Shivpuri to Laxman Jhula, and short treks lead to waterfalls and temples above the town. Rishikesh works well for travellers who want a blend of stillness and activity, from quiet mornings on the ghats to adventurous afternoons on the water. The town is vegetarian and alcohol-free by civic choice, which shapes the dining and evening scene. The best weather is typically from September to November and March to April, though rafting runs through to June.',
+    bestTimeToVisit: 'September–November, March–April', suggestedDuration: '2–3 days',
+    fact: 'The Beatles visited Rishikesh in 1968 to study Transcendental Meditation at the ashram of Maharishi Mahesh Yogi, bringing global attention to the town.',
+    localFood: [food('Aloo Puri', 'A spiced potato curry served with fried puffed bread, a common North Indian riverside meal.'), food('Chole Bhature', 'Chickpea curry paired with fluffy fried bread, popular at local dhabas.')],
+    attractions: [
+      attraction('rishikesh-laxman', 'Laxman Jhula', attractionImages.laxmanJhula, 'A suspension bridge over the Ganges with river and temple views.', 'Laxman Jhula Rishikesh'),
+      attraction('rishikesh-triveni', 'Triveni Ghat', attractionImages.triveniGhat, 'A riverside ghat where the evening Ganga Aarti takes place.', 'Triveni Ghat Rishikesh'),
+      attraction('rishikesh-beatles', 'Beatles Ashram', attractionImages.beetlesAshram, 'An abandoned ashram with art-covered ruins open to visitors.', 'Beatles Ashram Rishikesh'),
+    ],
+    vibes: vibeMap.rishikesh, popularity: popularityMap.rishikesh, budget: budgetMap.rishikesh, duration: durationMap.rishikesh, activities: activitiesMap.rishikesh, travelMode: travelModeMap.rishikesh,
+  },
+  {
+    id: 'jog-falls', name: 'Jog Falls', location: 'Karnataka, India', categories: ['Waterfalls', 'Rivers'], primaryCategory: 'Waterfalls',
+    category: 'Waterfalls', image: images.jogFalls,
+    description: 'Jog Falls is one of India’s highest waterfalls, where the Sharavathi River drops in four distinct cascades — Raja, Rani, Roarer, and Rocket — through a steep, forested gorge in Karnataka’s Western Ghats. During and just after the monsoon the falls are thunderous; in drier months the flow narrows but the viewpoint and surrounding forest remain worth a visit. A steep stairway leads down toward the base for travellers who want a closer look, though it requires reasonable fitness. Jog Falls suits a day trip or an unhurried weekend from nearby Shimoga or the coast. Carry water, start early, and treat the railings and wet rocks with care.',
+    bestTimeToVisit: 'August–January', suggestedDuration: '1 day',
+    fact: 'Jog Falls is a segmented waterfall, meaning the Sharavathi River splits into four named streams as it falls, rather than a single unbroken curtain.',
+    localFood: [food('Akki Roti', 'A rice-flour flatbread, a Karnataka breakfast staple often served with chutney.'), food('Filter Coffee', 'Strong South Indian filter coffee, widely available at roadside stalls in the region.')],
+    attractions: [
+      attraction('jog-main', 'Jog Falls Viewpoint', attractionImages.jogFallsMain, 'The main viewing area overlooking the full drop of the falls.', 'Jog Falls Karnataka'),
+      attraction('jog-viewpoint', 'Watkins Viewpoint', attractionImages.jogViewpoint, 'A secondary viewpoint giving a wider perspective of the gorge.', 'Watkins Viewpoint Jog Falls'),
+      attraction('jog-linganamakki', 'Linganamakki Dam', attractionImages.linganamakki, 'The dam upstream that controls the Sharavathi flow.', 'Linganamakki Dam Karnataka'),
+    ],
+    vibes: vibeMap['jog-falls'], popularity: popularityMap['jog-falls'], budget: budgetMap['jog-falls'], duration: durationMap['jog-falls'], activities: activitiesMap['jog-falls'], travelMode: travelModeMap['jog-falls'],
+  },
+  {
+    id: 'varanasi', name: 'Varanasi', location: 'Uttar Pradesh, India', categories: ['Pilgrimage', 'Rivers', 'Heritage'], primaryCategory: 'Pilgrimage',
+    category: 'Pilgrimage', image: images.varanasi,
+    description: 'Varanasi, one of the world’s oldest continuously inhabited cities, is the spiritual heart of Hinduism, where pilgrims gather along the Ganges ghats for prayer, ritual, and reflection. The riverfront unfolds as a long line of stone steps, each with its own significance, best experienced at dawn from a boat and at evening Aarti. The old city’s narrow lanes hold temples, silk-weaving workshops, and small sweet shops. Nearby Sarnath, where the Buddha gave his first sermon, adds a broader spiritual dimension. Varanasi is intense, crowded, and deeply atmospheric, rewarding travellers who approach it with patience and curiosity. Visit with open expectations and allow time simply to watch the river.',
+    bestTimeToVisit: 'October–March', suggestedDuration: '2–3 days',
+    fact: 'Varanasi is considered one of the oldest continuously inhabited cities in the world, with settlement dating back thousands of years.',
+    localFood: [food('Chaat', 'A family of tangy street snacks, especially kachori and golgappa, found across the old city.'), food('Malaiyo', 'A delicate, foam-like sweet made only in winter, flavoured with cardamom and saffron.'), food('Banarasi Thandai', 'A spiced milk drink, sometimes made with bhang, served especially during festivals.')],
+    attractions: [
+      attraction('varanasi-ghat', 'Dashashwamedh Ghat', attractionImages.dashaswamedh, 'The main ghat and the site of the nightly Ganga Aarti.', 'Dashashwamedh Ghat Varanasi'),
+      attraction('varanasi-vishwanath', 'Kashi Vishwanath Temple', attractionImages.kashiVishwanath, 'One of the most revered Shiva temples in India.', 'Kashi Vishwanath Temple Varanasi'),
+      attraction('varanasi-sarnath', 'Sarnath', attractionImages.sarnath, 'The site of the Buddha’s first sermon, near Varanasi.', 'Sarnath Varanasi'),
+    ],
+    vibes: vibeMap.varanasi, popularity: popularityMap.varanasi, budget: budgetMap.varanasi, duration: durationMap.varanasi, activities: activitiesMap.varanasi, travelMode: travelModeMap.varanasi,
+  },
+  {
+    id: 'manali-leh-ride', name: 'Manali–Leh Highway', location: 'Himachal Pradesh & Ladakh, India', categories: ['Scenic Rides', 'Mountains'], primaryCategory: 'Scenic Rides',
+    category: 'Scenic Rides', image: images.manaliLeh,
+    description: 'The Manali–Leh Highway is one of the world’s most dramatic high-altitude road journeys, crossing five high passes between the Beas valley and the Indus valley in Ladakh. The route passes through Rohtang La, Keylong, the Morey Plains, and Tanglang La before descending toward Leh, with landscapes shifting from green valleys to bare mountain desert. It suits experienced riders and travellers with time to acclimatise; the route is typically open only from around June to September due to snow. This is a journey to plan carefully — carry spares, ride within limits, and respect altitude and weather. The reward is a sequence of landscapes found almost nowhere else.',
+    bestTimeToVisit: 'June–September', suggestedDuration: '5–7 days',
+    isRoute: true,
+    routeStart: 'Manali, Himachal Pradesh',
+    routeEnd: 'Leh, Ladakh',
+    routeNote: 'The highway is generally open from June through September. Conditions change quickly at high altitude — check current pass status, carry emergency supplies, and ride only if experienced with mountain roads.',
+    fact: 'The Manali–Leh Highway crosses passes above 5,000 metres, including Tanglang La, one of the highest motorable roads in the world.',
+    localFood: [food('Maggi at Dhabas', 'Hot instant noodles at roadside dhabas, an unofficial ritual of the journey.'), food('Momos', 'Steamed dumplings available at stops along the route, especially nearer to Ladakh.')],
+    attractions: [
+      attraction('ride-rohtang', 'Rohtang Pass', attractionImages.rohtangPass, 'The first major pass north of Manali, with views back toward the Kullu valley.', 'Rohtang Pass Manali'),
+      attraction('ride-pangong', 'Pangong Lake', attractionImages.pangongLake, 'A high-altitude lake with shifting blue colours, reachable from Leh.', 'Pangong Lake Ladakh'),
+      attraction('ride-road', 'Gata Loops & Morey Plains', attractionImages.manaliLehRoad, 'A series of dramatic switchbacks opening onto a high plateau stretch.', 'Gata Loops Manali Leh Highway'),
+    ],
+    vibes: vibeMap['manali-leh-ride'], popularity: popularityMap['manali-leh-ride'], budget: budgetMap['manali-leh-ride'], duration: durationMap['manali-leh-ride'], activities: activitiesMap['manali-leh-ride'], travelMode: travelModeMap['manali-leh-ride'],
+  },
+];
+
+export function getDestination(id) {
+  return destinations.find((destination) => destination.id === id);
+}
+
+export function getDestinationsByCategory(category) {
+  if (category === 'All') return destinations;
+  return destinations.filter((item) => item.categories.includes(category));
+}
+
+export function getRecommendations(destination) {
+  if (!destination) return [];
+  return destinations
+    .filter((item) => item.id !== destination.id && item.categories.some((c) => destination.categories.includes(c)))
+    .slice(0, 3);
+}
+
+export function searchDestinations(query) {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return destinations;
+  return destinations.filter((item) => item.name.toLowerCase().includes(normalized) || item.location.toLowerCase().includes(normalized) || item.categories.some((c) => c.toLowerCase().includes(normalized)));
+}
